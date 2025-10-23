@@ -1,0 +1,56 @@
+<div class="modal fade show d-block" tabindex="-1" role="dialog" style="background: rgba(0,0,0,0.6);">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h4 class="modal-title">
+          <i class="bi bi-clipboard-check me-2"></i>
+          Proceso de Reserva - {{ habitacion?.nombre }}
+        </h4>
+        <button type="button" class="btn-close btn-close-white" (click)="emitirCerrar()" aria-label="Close"></button>
+      </div>
+
+      <!-- Progreso -->
+      <div class="progress-container px-4 pt-4">
+        <div class="progress-bar-custom">
+          <div class="progress-fill" [style.width.%]="obtenerProgreso()"></div>
+        </div>
+      </div>
+
+      <div class="modal-body p-4">
+        <!-- Aquí van los pasos -->
+        <ng-container [ngSwitch]="paso">
+          <ng-container *ngSwitchCase="1">
+            <!-- Paso 1: Datos del usuario -->
+            <h5>Datos del huésped</h5>
+            <input class="form-control mb-2" [(ngModel)]="nombre" placeholder="Nombre completo" />
+            <input class="form-control mb-2" [(ngModel)]="email" placeholder="Correo electrónico" />
+            <input class="form-control mb-2" [(ngModel)]="telefono" placeholder="Teléfono" />
+            <input class="form-control mb-2" [(ngModel)]="documento" placeholder="Documento" />
+          </ng-container>
+
+          <ng-container *ngSwitchCase="2">
+            <!-- Paso 2: Fechas -->
+            <h5>Selecciona tus fechas</h5>
+            <input type="date" class="form-control mb-2" [(ngModel)]="fechaInicio" />
+            <input type="date" class="form-control mb-2" [(ngModel)]="fechaFin" />
+          </ng-container>
+
+          <ng-container *ngSwitchCase="3">
+            <!-- Paso 3: Confirmación -->
+            <h5>Confirmar reserva</h5>
+            <p>Habitación: {{ habitacion?.nombre }}</p>
+            <p>Desde: {{ fechaInicio }} hasta {{ fechaFin }}</p>
+            <p>Huésped: {{ nombre }}</p>
+          </ng-container>
+        </ng-container>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" (click)="emitirCerrar()">Cancelar</button>
+        <button class="btn btn-outline-primary" *ngIf="paso > 1" (click)="anterior()">Anterior</button>
+        <button class="btn btn-primary" *ngIf="paso < 3" (click)="siguiente()">Siguiente</button>
+        <button class="btn btn-success" *ngIf="paso === 3" (click)="confirmar()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
