@@ -21,7 +21,7 @@ export class RoomService {
       capacidad: 4,
       precio: 350000,
       estado: 'Disponible',
-      imagen: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      imagen: 'https://tse2.mm.bing.net/th/id/OIP.zfcdvjbMEAeMOaZxtF0YyQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ export class RoomService {
       capacidad: 2,
       precio: 200000,
       estado: 'Disponible',
-      imagen: 'https://images.unsplash.com/photo-1560067174-8947f2a4a12a',
+      imagen: 'https://www.hotelflorencedixie.cl/wp-content/uploads/2017/11/Habitacion-Doble-Est%C3%A1ndar-001-Hotel-Lady-Florence-Dixie.jpg',
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export class RoomService {
       capacidad: 2,
       precio: 500000,
       estado: 'Reservada',
-      imagen: 'https://images.unsplash.com/photo-1600585154209-3d31cf9b8b58',
+      imagen: 'https://images.mirai.com/INFOROOMS/100121188/zYnpoAdCAeU3oD8vKDHF/zYnpoAdCAeU3oD8vKDHF_original.jpg',
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ export class RoomService {
       capacidad: 1,
       precio: 150000,
       estado: 'Disponible',
-      imagen: 'https://images.unsplash.com/photo-1628874691193-1cf4d9b36f5a',
+      imagen: 'https://tse1.mm.bing.net/th/id/OIP.bNmyIZ2vz4Qzd4seFNBFrwHaFj?rs=1&pid=ImgDetMain&o=7&rm=3',
     },
   ];
 

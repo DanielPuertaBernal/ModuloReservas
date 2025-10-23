@@ -1,8 +1,138 @@
-.habitacion-card {
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;700&family=Great+Vibes&display=swap');
+
+/* Fuente principal formal */
+body {
+  font-family: 'Merriweather', serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Logo */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%; /* Hace el logo redondeado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Título principal */
+.title-elegante {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #1d3557;
+}
+
+/* Buscador */
+.buscador-container input {
+  font-family: 'Merriweather', serif;
+  font-size: 1rem;
+  border-radius: 0 10px 10px 0;
+}
+
+.input-group-text {
+  border-right: none;
+  font-size: 1.2rem;
+  border-radius: 10px 0 0 10px;
+}
+
+.input-group .form-control {
+  border-left: none;
+  box-shadow: none !important;
+}
+
+/* Tarjetas de habitaciones */
+.habitacion-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
 }
 
 .habitacion-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body h5 {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Sección de título */
+.seccion-titulo {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ✅ Responsividad */
+@media (max-width: 768px) {
+  .logo-container {
+    position: relative;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    left: 0;
+    top: 0;
+  }
+
+  .logo-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 5px;
+  }
+
+  .title-elegante {
+    font-size: 2.3rem;
+  }
+
+  .buscador-container input {
+    font-size: 0.9rem;
+  }
+
+  .habitacion-card {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 90px;
+    height: 90px;
+    background-color: #ffffff;
+    padding: 5px;
+  }
+
+  .title-elegante {
+    font-size: 2rem;
+  }
 }
